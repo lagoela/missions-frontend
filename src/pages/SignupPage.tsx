@@ -19,8 +19,8 @@ export default function SignupPage() {
     setError(null)
     setLoading(true)
     try {
-      const token = await signup(username, email, password)
-      handleLogin(token)
+      const response = await signup(username, email, password)
+      handleLogin(response)
       navigate('/')
     } catch {
       setError('Could not create account. Please try again.')

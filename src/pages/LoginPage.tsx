@@ -18,8 +18,8 @@ export default function LoginPage() {
     setError(null)
     setLoading(true)
     try {
-      const token = await login(username, password)
-      handleLogin(token)
+      const response = await login(username, password)
+      handleLogin(response)
       navigate('/')
     } catch {
       setError('Invalid username or password.')
